@@ -139,20 +139,16 @@ text-decoration: none;
 
 /*Aqui acaba*/
 
-
 #dois {
-  margin-top: 20px;
+    margin-top: 20px;
 }
-.container>h2 {
+#dois>h2 {
     text-align: center;
-    margin-bottom: 8px;
-    width: 400px;
-    padding: 100px;
 }
 .container>p {
     text-align: justify;
     width: 600px;
-    padding: 20px;
+    padding:20px;
 }
 .container {
     display: flex;
@@ -164,6 +160,7 @@ text-decoration: none;
 
 .container>img {
     width: 400px;
+    padding: 20px;
 }
 
 /*aqui começa o mobile*/
