@@ -163,6 +163,22 @@ text-decoration: none;
     padding: 20px;
 }
 
+.lista>h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: bolder;
+
+}
+
+.lista>p {
+    text-align: justify;
+}
+
+.lista>ul {
+
+}
+
 /*aqui começa o mobile*/
 
 @media (max-width: 750px) {
@@ -235,5 +251,4 @@ text-decoration: none;
         transform: rotate(-135deg);
         top: -7px;
     }
-
 }
