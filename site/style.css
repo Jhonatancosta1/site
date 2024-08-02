@@ -143,16 +143,27 @@ text-decoration: none;
 #dois {
   margin-top: 20px;
 }
-#dois>h2 {
+.container>h2 {
     text-align: center;
     margin-bottom: 8px;
+    width: 400px;
+    padding: 100px;
 }
-#dois>p {
+.container>p {
     text-align: justify;
+    width: 600px;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+   
 }
 
-#img {
-    display: flex;
+.container>img {
+    width: 400px;
 }
 
 /*aqui começa o mobile*/
