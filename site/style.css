@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: sans-serif;
+    background: url(img/background.jpeg);
+}
+
+/*parte da header começa aqui*/
+
+#nome {
+    width: 600px;
+} /* nome da mulher */
+
+.logo{
+
+    padding-top: 70px;
+    
+}
+
+.header{
+    padding-inline: 16px;
+    background-color: rgb(153, 204, 153);
+    height: 85px;
+}
+
+.nav{
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex; /* itens lado a lado*/
+    justify-content: space-between; /* coloca um espaçamento entre os itens*/
+    align-items: center;
+}
+
+.logo{
+    font-size: 48px;
+}
+
+/*aqui termina a header*/
+
+/*parte da navegação do site começa aqui*/
+
+.nav-list{
+    display: flex;
+    gap: 32px; /* pode selecionar o tamanho do espaçamento entre os itens*/
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 18px;
+    color: #fff;
+    padding-block: 16px;
+    text-decoration: none;
+    
+}
+
+.main {
+    height: calc(100vh - 70px);
+    background: center / cover no-repeat url("./img/inicio.png"); 
+    
+    /* essa parte faz o background calcular automaticamente o tamanho da pagina e ele se adequa a qualquer tamanho.*/
+}
+
+/*Termina aqui a parte de navegação do site*/
+
+/*abre e fecha da nav*/
+
+.hamburger{
+    display: none; /*essa tag esconde o menu hamburger no desktop e so aparece no mobile*/
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+/* criou os tres tracinhos do menu hamburguer*/
+.hamburger::before,
+.hamburger::after{
+content: " ";
+display: block;
+width: 30px;
+height: 3px;
+background-color: #fff;
+margin-top: 5px;
+position: relative;
+transition: 0.3s;
+
+}
+/*Aqui está a personalização dos botões*/
+.personalizacao {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.personalizacao:hover {
+    box-shadow: 6px 10px 6px rgba(0, 0, 0, 0.362);
+    color: purple;
+    background-color: white;
+}
+
+/* Aqui acaba a personalização*/
+
+/* Aqui começa a formatação da primeira foto */
+
+.background {
+    background: center / cover no-repeat url(pic/inicio.png);
+    height: 250px;
+}
+
+#especialista {
+    text-align: center;
+    font-family: sans-serif;
+    color: purple;
+}
+
+.agenda
+{
+padding: 15px 15px;
+color: white;
+background-color: purple;
+border-width: 10px;
+border-color: purple;
+outline-style: solid;
+box-shadow: 3px;
+border-radius: 10px;
+text-decoration: none;
+}
+
+.agenda:hover {
+    box-shadow: 6px 10px 6px rgba(0, 0, 0, 0.362);
+    color: purple;
+    background-color: white;
+}
+
+/*Aqui acaba*/
+
+
+#dois {
+  margin-top: 20px;
+}
+#dois>h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+#dois>p {
+    text-align: justify;
+}
+
+#img {
+    display: flex;
+}
+
+/*aqui começa o mobile*/
+
+@media (max-width: 750px) {
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav-list {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(153, 204, 153);
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+
+    }
+
+
+    /*Parte do javascript*/
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav-list{
+        font-size: 24px;
+        opacity: 1;
+    }
+
+/* faz os links aparecer um de cada vez na tela*/
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+}
